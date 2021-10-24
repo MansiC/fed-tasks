@@ -74,21 +74,3 @@ a p {
   display: block;
   margin: auto;
 }
-#page-body {
-  width: 100;
-  text-align: center;
-  margin: 467px 0 0 0;
-}
-
-.pagination {
-  display: inline-block;
-  text-align: center;
-}
-
-.pagination a {
-  color: black;
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
-  text-align: center;
-}

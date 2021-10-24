@@ -14,7 +14,7 @@ const button = document.createElement("button");
 button.innerText = "Search";
 button.className = "btn  btn-primary";
 button.onclick = function () {
-  getData(0, sliderinner);
+  getData(sliderinner);
 };
 
 element.appendChild(inp);
@@ -29,7 +29,3 @@ sliderinner.className = "slider-inner";
 
 element.appendChild(slider);
 slider.appendChild(sliderinner);
-
-const pageBody = document.createElement("div");
-pageBody.id = "page-body";
-element.appendChild(pageBody);
