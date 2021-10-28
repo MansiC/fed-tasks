@@ -1,0 +1,9 @@
+.card {
+  margin: 10px;
+}
+.active {
+  color: rgb(39, 230, 39);
+}
+.deleted {
+  color: red;
+}

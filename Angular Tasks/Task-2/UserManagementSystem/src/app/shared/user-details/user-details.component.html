@@ -1,0 +1,24 @@
+<div *ngIf="user" class="card">
+  <div class="card-body col-sm-12">
+    {{ user.firstName }} {{ user.lastName }}
+    <p [ngClass]="user.isDeleted ? 'deleted' : 'active'">
+      {{ user.isDeleted ? "Deleted" : "Active" }}
+    </p>
+    <div class="row">
+      <div class="col-sm-6">Login Id</div>
+      <div class="col-sm-6">{{ user.login }}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">First Name</div>
+      <div class="col-sm-6">{{ user.firstName }}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">Last Name</div>
+      <div class="col-sm-6">{{ user.lastName }}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">Age</div>
+      <div class="col-sm-6">{{ user.age }}</div>
+    </div>
+  </div>
+</div>

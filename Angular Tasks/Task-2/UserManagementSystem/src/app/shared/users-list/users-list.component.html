@@ -1,0 +1,7 @@
+<app-user
+  *ngFor="let user of users"
+  [user]="user"
+  [action]="action"
+  (newState)="changeStateHandler($event)"
+>
+</app-user>

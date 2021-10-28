@@ -1,0 +1,58 @@
+import { User } from './user';
+
+export const USERS: User[] = [
+  {
+    id: '1',
+    firstName: 'User',
+    lastName: 'One',
+    age: 22,
+    login: 'User1',
+    password: 'one',
+    isDeleted: false,
+  },
+  {
+    id: '2',
+    firstName: 'User',
+    lastName: 'Two',
+    age: 26,
+    login: 'User2',
+    password: 'two',
+    isDeleted: true,
+  },
+  {
+    id: '3',
+    firstName: 'User',
+    lastName: 'Three',
+    age: 19,
+    login: 'User3',
+    password: 'three',
+    isDeleted: false,
+  },
+  {
+    id: '4',
+    firstName: 'User',
+    lastName: 'Four',
+    age: 22,
+    login: 'User4',
+    password: 'four',
+    isDeleted: true,
+  },
+  {
+    id: '5',
+    firstName: 'User',
+    lastName: 'Five',
+    age: 42,
+    login: 'User5',
+    password: 'six',
+    isDeleted: false,
+  },
+  {
+    id: '6',
+    firstName: 'User',
+    lastName: 'Six',
+    age: 27,
+    login: 'User6',
+    password: 'six',
+    isDeleted: true,
+  },
+];

@@ -1,0 +1,27 @@
+<div
+  class="card"
+  [ngClass]="[user.isDeleted === false ? 'active' : 'inactive']"
+>
+  <div class="card-body">
+    {{ user.firstName }} {{ user.lastName }}
+    <button
+      type="button"
+      [ngClass]="
+        action == 'manage'
+          ? 'btn btn-primary'
+          : action == 'active'
+          ? ' btn btn-danger'
+          : 'btn btn-success'
+      "
+      (click)="changeState(user)"
+    >
+      {{
+        action == "manage"
+          ? "Details"
+          : action == "active"
+          ? "Deactivate"
+          : "Activate"
+      }}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+<div class="container">
+  <app-users-list [users]="users" [action]="'deleted'"></app-users-list>
+  <div *ngIf="users.length == 0">No deleted users</div>
+</div>

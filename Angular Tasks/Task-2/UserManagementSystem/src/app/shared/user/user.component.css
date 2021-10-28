@@ -1,0 +1,17 @@
+.card {
+  margin: 10px;
+}
+.active {
+  border-color: rgb(31, 241, 31);
+}
+.inactive {
+  border-color: red;
+}
+
+.btn {
+  float: right;
+  margin-top: 3%;
+}
+.btn-primary {
+  margin-bottom: 4%;
+}

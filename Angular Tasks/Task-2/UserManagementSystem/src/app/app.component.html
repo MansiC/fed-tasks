@@ -1,0 +1,23 @@
+<div class="container">
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['']">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['active']">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['deleted']">Deleted</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['manage']">Manage</a>
+    </li>
+  </ul>
+  <hr />
+  <div class="jumbotron">
+    <h3 class="card-title">Users Management System</h3>
+    <p class="card-text">Welcome to Users Management System</p>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
