@@ -1,0 +1,17 @@
+img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+[class*="col-"] {
+  padding: 15px;
+}
+.col-sm-3 {
+  padding: 5px;
+}
+p {
+  margin: 2px;
+}
+.button {
+  margin-top: 30px;
+}

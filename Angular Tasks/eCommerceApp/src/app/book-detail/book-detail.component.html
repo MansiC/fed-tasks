@@ -1,0 +1,37 @@
+<div *ngIf="book; else notfound">
+  <div class="row">
+    <div class="col-sm-4">
+      <img [attr.src]="book.img" />
+    </div>
+    <div class="col-sm-8">
+      <h5>{{ book.title }}</h5>
+      <p>Book Price: {{ book.price }}</p>
+      <p>Author Name: {{ book.author }}</p>
+      <p>Page Count: 100</p>
+      <p>ISBN: 12ANJD</p>
+      <div class="row button">
+        <div class="col-sm-3">
+          <button class="btn btn-outline-primary btn-sm" (click)="addToCart()">
+            Add to cart
+          </button>
+        </div>
+        <div class="col-sm-3">
+          <button class="btn btn-outline-primary btn-sm" (click)="checkout()">
+            Buy now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-8">
+      <h6>Description</h6>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo reiciendis
+      molestiae ex, hic consequatur beatae, enim deleniti veritatis libero
+      laborum dicta harum adipisci illum? Enim voluptatibus aperiam qui sint
+      architecto.
+    </div>
+  </div>
+</div>
+<ng-template #notfound>Book does not exists.</ng-template>

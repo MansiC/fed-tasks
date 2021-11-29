@@ -1,0 +1,30 @@
+<div class="container" *ngFor="let book of books; let i = index">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between">
+      <p>OrderPlaced: {{ orders[i].orderDate | date }}</p>
+      <div>
+        <p>Status :</p>
+        <p
+          [ngClass]="
+            orders[i].status == 'Delivered' ? 'text-success' : 'text-danger'
+          "
+        >
+          {{ orders[i].status }}
+          <!-- {{ orders[i].orderDate < date ? "Delivered" : "Not Delivered" }} -->
+        </p>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-4">
+          <img [attr.src]="book.img" />
+        </div>
+        <div class="col-sm-8">
+          <h5>{{ book.title }}</h5>
+          <p>{{ book.author }}</p>
+          <p>{{ book.price | currency: "INR" }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

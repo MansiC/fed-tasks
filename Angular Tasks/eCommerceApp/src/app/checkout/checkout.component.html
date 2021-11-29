@@ -1,0 +1,352 @@
+<div class="container mb-5">
+  <main>
+    <div class="py-5 text-center">
+      <h2>Checkout</h2>
+    </div>
+    <!-- <app-cart></app-cart> -->
+    <div class="row g-3">
+      <!-- <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-muted">Your cart</span>
+          <span class="badge bg-secondary rounded-pill">3</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Total</h6>
+              <small class="text-muted">Cart Items</small>
+            </div>
+            <span class="text-muted">$12</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between bg-light">
+            <span>Total (USD)</span>
+            <strong>$12</strong>
+          </li>
+        </ul>
+      </div> -->
+
+      <app-cart class="col-md-6 col-lg-5 order-md-last"></app-cart>
+      <!-- <form [formGroup]="payment" (ngSubmit)="onPaymentSubmit()" novalidate>
+          <hr class="my-4" />
+
+          <h4 class="mb-3">Payment</h4>
+
+          <div>
+            <div class="my-3">
+              <div class="form-check">
+                <input
+                  id="credit"
+                  name="paymentMethod"
+                  type="radio"
+                  class="form-check-input"
+                  checked=""
+                  required=""
+                  formControlName="paymentMethod"
+                />
+                <label class="form-check-label" for="credit">Credit card</label>
+              </div>
+              <div class="form-check">
+                <input
+                  id="debit"
+                  name="paymentMethod"
+                  type="radio"
+                  class="form-check-input"
+                  required=""
+                  formControlName="paymentMethod"
+                />
+                <label class="form-check-label" for="debit">Debit card</label>
+              </div>
+              <div class="form-check">
+                <input
+                  id="paypal"
+                  name="paymentMethod"
+                  type="radio"
+                  class="form-check-input"
+                  required=""
+                  formControlName="paymentMethod"
+                />
+                <label class="form-check-label" for="paypal">PayPal</label>
+              </div>
+            </div>
+
+            <div class="row gy-3">
+              <div class="col-md-6">
+                <label for="cc-name" class="form-label">Name on card</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-name"
+                  placeholder=""
+                  required=""
+                  formControlName="ccname"
+                />
+                <small class="text-muted">Full name as displayed on card</small>
+                <div class="invalid-feedback">Name on card is required</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="cc-number" class="form-label"
+                  >Credit card number</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-number"
+                  placeholder=""
+                  required=""
+                  formControlName="ccnumber"
+                />
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <label for="cc-expiration" class="form-label">Expiration</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-expiration"
+                  placeholder=""
+                  required=""
+                  formControlName="ccexpiration"
+                />
+                <div class="invalid-feedback">Expiration date required</div>
+              </div>
+
+              <div class="col-md-3">
+                <label for="cc-cvv" class="form-label">CVV</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-cvv"
+                  placeholder=""
+                  required=""
+                  formControlName="cccvv"
+                />
+                <div class="invalid-feedback">Security code required</div>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4" />
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">
+            Continue to checkout
+          </button>
+        </form> -->
+
+      <div class="col-md-6 col-lg-7">
+        <h4 class="mb-3">Shipping Address</h4>
+
+        <form
+          *ngIf="!hasAddress || edit"
+          class="needs-validation"
+          novalidate
+          action="/order-success.html"
+          [formGroup]="addressForm"
+          (ngSubmit)="onAddressSubmit()"
+        >
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">First name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                formControlName="firstName"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  !addressForm.controls.firstName?.valid &&
+                  (this.addressForm.controls.firstName?.dirty ||
+                    this.addressForm.controls.firstName?.touched)
+                "
+              >
+                Valid first name is required.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Last name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="lastName"
+                formControlName="lastName"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  !addressForm.controls.lastName?.valid &&
+                  (this.addressForm.controls.lastName?.dirty ||
+                    this.addressForm.controls.lastName?.touched)
+                "
+              >
+                Valid last name is required.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="phone" class="form-label"
+                >Phone <span class="text-muted"></span
+              ></label>
+              <input
+                type="tel"
+                class="form-control"
+                id="phone"
+                placeholder="+91-1111111111"
+                value=""
+                required=""
+                formControlName="phone"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  !addressForm.controls.phone?.valid &&
+                  (this.addressForm.controls.phone?.dirty ||
+                    this.addressForm.controls.phone?.touched)
+                "
+              >
+                Please enter a valid phone for shipping updates.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Address</label>
+              <input
+                type="text"
+                class="form-control"
+                id="address"
+                placeholder="1234 Main St"
+                required=""
+                formControlName="address"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  !addressForm.controls.address?.valid &&
+                  (this.addressForm.controls.address?.dirty ||
+                    this.addressForm.controls.address?.touched)
+                "
+              >
+                Please enter your shipping address.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address2" class="form-label"
+                >Address 2 <span class="text-muted">(Optional)</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="address2"
+                placeholder="Apartment or suite"
+                formControlName="address2"
+              />
+            </div>
+
+            <div class="col-md-5">
+              <label for="country" class="form-label">Country</label>
+              <select
+                class="form-control"
+                id="country"
+                required=""
+                formControlName="city"
+              >
+                <option value="">Choose...</option>
+                <option>Pune</option>
+                <option>Mumbai</option>
+                <option>Hyderabad</option>
+                <option>Bangalore</option>
+              </select>
+              <div
+                class="text-danger"
+                *ngIf="
+                  !addressForm.controls.city?.valid &&
+                  (this.addressForm.controls.city?.dirty ||
+                    this.addressForm.controls.city?.touched)
+                "
+              >
+                Please select a valid city.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="state" class="form-label">State</label>
+              <select
+                class="form-control"
+                id="state"
+                required=""
+                formControlName="state"
+              >
+                <option value="">Choose...</option>
+                <option>California</option>
+                <option>Maharashtra</option>
+                <option>Abndhra Pradesh</option>
+              </select>
+              <div
+                class="text-danger"
+                *ngIf="
+                  !addressForm.controls.state?.valid &&
+                  (this.addressForm.controls.state?.dirty ||
+                    this.addressForm.controls.state?.touched)
+                "
+              >
+                Please provide a valid state.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="zip" class="form-label">Zip</label>
+              <input
+                type="text"
+                class="form-control"
+                id="zip"
+                placeholder=""
+                required=""
+                formControlName="zip"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  !addressForm.controls.zip?.valid &&
+                  (this.addressForm.controls.zip?.dirty ||
+                    this.addressForm.controls.zip?.touched)
+                "
+              >
+                Zip code required.
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary mt-4" type="submit">
+            Save Address
+          </button>
+        </form>
+        <div *ngIf="hasAddress && !edit">
+          <div class="card">
+            <div class="card-header">Shipping Address</div>
+            <div class="card-body">
+              <div class="card-text">
+                {{ addressForm.value.firstName }}
+                {{ addressForm.value.lastName }}
+              </div>
+              <div class="card-text">+91-{{ addressForm.value.phone }}</div>
+              <div class="card-text">{{ addressForm.value.address }}</div>
+              <div class="card-text">
+                {{ addressForm.value.city }}, {{ addressForm.value.state }},
+                ZipCode -
+                {{ addressForm.value.zip }}
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary" (click)="editAddress()">
+            Edit Address
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

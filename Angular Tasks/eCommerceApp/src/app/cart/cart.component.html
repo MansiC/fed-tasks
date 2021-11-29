@@ -1,0 +1,107 @@
+<div *ngIf="books.length != 0">
+  <h4 class="d-flex justify-content-between align-items-center mb-3">
+    <span class="text-muted">Your cart</span>
+    <span class="badge bg-secondary rounded-pill text-light">{{ total }}</span>
+  </h4>
+  <div>
+    <ul class="list-group mb-3">
+      <li
+        class="list-group-item d-flex justify-content-between mb-0 pb-0"
+        *ngFor="let book of books; let i = index"
+      >
+        <div class="text-muted text-center">
+          <!-- <img src="{{ book.img }}" alt="" /> -->
+          {{ book.title }}
+        </div>
+
+        <div class="d-flex flex-row">
+          <div class="mr-4">
+            <h6 class="text-center">Quantity</h6>
+            <!-- <div class="d-flex flex-row"> -->
+            <div class="btn-group btn-group-sm" role="group">
+              <p
+                class="btn btn-secondary"
+                ng-disabled="item.quantity >= 1000"
+                (click)="updateQuantity(i, '+')"
+              >
+                +
+              </p>
+              <p class="btn border-secondary text-center">
+                {{ qty[i] }}
+              </p>
+              <p
+                class="btn btn-secondary"
+                ng-disabled="item.quantity < 1"
+                (click)="updateQuantity(i, '-')"
+              >
+                -
+              </p>
+            </div>
+          </div>
+
+          <div class="align-self-center m-4">
+            <p>{{ qty[i] * book.price | currency: "INR" }}</p>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item d-flex justify-content-between lh-sm">
+        <div>
+          <h6 class="my-0">Total</h6>
+          <small class="text-muted">Cart Items</small>
+        </div>
+        <span class="text-muted m-4"> {{ totalPrice | currency: "INR" }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+<div *ngIf="isCart && books.length != 0" class="d-flex justify-content-end">
+  <button ng-disabled="" class="btn btn-primary" (click)="goToCheckout()">
+    Checkout
+  </button>
+</div>
+<div *ngIf="!isCart && books.length != 0" class="col-sm-12" #payment>
+  <div>
+    <h4>Payment Information</h4>
+    <ul class="list-group mb-3">
+      <li class="list-group-item d-flex justify-content-between">
+        Items Price <span>{{ totalPrice | currency: "INR" }}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between">
+        Tax <span>{{ totalPrice * 0.12 | currency: "INR" }}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between">
+        Shipping Charges <span>{{ total * 5 | currency: "INR" }}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between bg-light">
+        Total Amount
+        <span>{{
+          totalPrice + totalPrice * 0.12 + total * 5 | currency: "INR"
+        }}</span>
+      </li>
+    </ul>
+    <!-- <table class="table">
+      <tbody>
+        <tr>
+          <td>Items Price</td>
+          <td>
+            {{ totalPrice | currency: "INR" }}
+          </td>
+        </tr>
+        <tr>
+          <td>Tax</td>
+          <td>{{ totalPrice * 0.12 | currency: "INR" }}</td>
+        </tr>
+        <tr>
+          <td>Shipping Charges</td>
+          <td>{{ total * 5 | currency: "INR" }}</td>
+        </tr>
+      </tbody>
+    </table> -->
+    <button class="w-100 btn btn-primary btn-lg" (click)="finalcheckout()">
+      Continue to checkout
+    </button>
+  </div>
+</div>
+<div *ngIf="books.length == 0" class="card mt-3">
+  <div class="card-body">Your cart is empty</div>
+</div>
