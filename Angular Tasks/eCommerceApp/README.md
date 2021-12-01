@@ -30,20 +30,20 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Homepage
 
-![homepage](src\assets\images\Screenshot (39).png)
+![homepage](./src/assets/images/Screenshot (39).png)
 
 BookDetail page
 
-![bookdetail](src\assets\images\Screenshot (42).png)
+![bookdetail](./src/assets/images/Screenshot (42).png)
 
 MyOrders page
 
-![myorders](src\assets\images\Screenshot (41).png)
+![myorders](./src/assets/images/Screenshot (41).png)
 
 Cart page
 
-![cart](src\assets\images\Screenshot (43).png)
+![cart](./src/assets/images/Screenshot (43).png)
 
 Checkout page
 
-![checkout](src\assets\images\screencapture-localhost-4200-checkout-2021-12-01-14_27_51.png)
+![checkout](./src/assets/images/screencapture-localhost-4200-checkout-2021-12-01-14_27_51.png)
