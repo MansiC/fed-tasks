@@ -3,7 +3,9 @@
     <img [attr.src]="book.img" />
     <div>
       <h6 class="card-title text-center">{{ book.title }}</h6>
-      <p>{{ book.description }}</p>
+      <p style="line-height: 1.5em; height: 3em; overflow: hidden">
+        {{ book.description }}
+      </p>
       <button class="btn btn-info btn-sm btn-block" (click)="openBookDetails()">
         Buy
       </button>
