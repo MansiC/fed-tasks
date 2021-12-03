@@ -7,5 +7,5 @@ Create an ecommerce WebApi using NodeJS (ExpressJs). Implement Nodejs Authentica
 2. For Validation use Joi.
 3. For Logging use Pino.
    <br />
-   > Book Schema: - <br/>&ensp;id: guid, <br/>&ensp;title: string, <br /> &ensp;price: integer, <br /> &ensp;page_count: integer, <br />&ensp; image_url: string, <br />&ensp; description: string <br />&ensp; author: guid, <br />&ensp; comments: array of strings <br /> <br /> <br />
+   > Book Schema: - <br/>&ensp;id: guid, <br/>&ensp;title: string, <br /> &ensp;price: integer, <br /> &ensp;page_count: integer, <br />&ensp;image_url: string, <br />&ensp;description: string <br />&ensp;author: guid, <br />&ensp;comments: array of strings <br /> <br /> <br />
    > Author Schema: -<br/> &ensp; id: guid, <br /> &ensp; name: string, <br /> &ensp; books: array, <br /> &ensp; image_url: string, <br /> &ensp; description: string <br />
