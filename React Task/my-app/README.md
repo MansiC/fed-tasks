@@ -51,16 +51,16 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 Homepage
 
-![homepage](<./src/assets/images/Screenshot(47).png>)
+![homepage](<./src/assets/Screenshot(47).png>)
 
 BookDetail page
 
-![bookdetail](<./src/assets/images/Screenshot(53).png>)
+![bookdetail](<./src/assets/Screenshot(53).png>)
 
 MyOrders page
 
-![myorders](<./src/assets/images/Screenshot(48).png>)
+![myorders](<./src/assets/Screenshot(48).png>)
 
 Cart page
 
-![cart](<./src/assets/images/Screenshot(52).png>)
+![cart](<./src/assets/Screenshot(52).png>)
