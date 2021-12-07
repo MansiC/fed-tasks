@@ -1,0 +1,87 @@
+.card{
+    justify-content: center;
+}
+.card input{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: lightgray;
+}
+.card input:hover{
+    background-color: gray;
+}
+.fc-r{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.fc-c{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.fitem{
+    justify-items: flex-start;
+}
+.fitem2{
+    flex-grow: 2;
+}
+.fc-r button{
+    width: 200px;
+}
+.fi-c{
+    align-self: center;
+}
+.g-1{
+    gap: 20px;
+}
+.g-2{
+    gap: 20px;
+}
+.center{
+    text-align: center;
+}
+hr
+{
+    height: 65px;
+    width: 1px;
+}
+img{
+    height:"50px" ;
+    width:"80px"; 
+    border: 1px solid black;
+}
+
+@media screen and (max-width:756px) {
+    .quant
+    {
+        width: 100%;
+    }    
+    /* .mc-1{
+        flex-direction: column;
+        gap: 1px;
+    } */
+    
+    .g-2
+    {
+        gap: 2px;
+    }
+    hr{
+        height: 100px;
+    }   
+    .mc-1 label,.mc-1 input{
+        width: 37px;
+        height: 30px;
+    }
+}
+@media screen and (max-width:500px) {
+    
+    hr{
+        display: none;
+    }
+    /* .card img{
+        display: none;
+    } */
+
+}

@@ -1,0 +1,8 @@
+export const ActionTypes={
+    GET_BOOKS:"GET_BOOKS",
+    SET_BOOK:"SET_BOOK",    
+    ADD_TO_CART : "ADD_TO_CART",
+    REMOVE_FROM_CART : "REMOVE_FROM_CART",
+    CLEAR_CART : "CLEAR_CART",
+    CHECKOUT:"CHECKOUT"
+}
