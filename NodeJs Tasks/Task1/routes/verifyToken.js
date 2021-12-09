@@ -1,5 +1,11 @@
 const jwt = require("jsonwebtoken");
 
+let refreshTokens = [];
+
+const setRefeshTokens = (newtokens) => {
+  refreshTokens = newtokens;
+};
+
 const verifyToken = (req, res, next) => {
   const authHeader = req.headers.token;
   if (authHeader) {
@@ -52,4 +58,6 @@ module.exports = {
   verifyTokenAndAuthorization,
   generateAccessToken,
   generateRefreshToken,
+  refreshTokens,
+  setRefeshTokens,
 };
